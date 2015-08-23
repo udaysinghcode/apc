@@ -1,7 +1,10 @@
 = simple_form_for @post do |f|
-	= f.input :image
-	= f.input :title
-	= f.input :link
-	= f.input :description
+	= f.input :image, required: :true
+	= f.input :title, required: :true
+	= f.input :link, required: :true
+	= f.input :price_based_on_minimum_order, required: :true
+	= f.input :minimum_number_to_order_at_said_price, required: :true
+	= f.input :order_due_date, as: :date, required: :true
+	= f.input :description, required: :true
 
 	= f.button :submit
