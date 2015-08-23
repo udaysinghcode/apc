@@ -1,5 +1,26 @@
+- if user_signed_in?
+	%p#intro
+		Hello
+		= current_user.name
+		%br/
+		%span
+			List what you want Delta Sig to do, a price, and a minimum number of people.
+		%span
+			If you like something, you are officially signing up for it.
+		%span
+			This is so you can see what others are doing and we can get numbers for bulk things.
+		%span
+			Post an idea, or like something, but if you say you're in! You're going to be charged!
+		%span
+			Feel free to discuss on the site!
+- else
+	%p#intro
+		List your apparel ideas, event ideas, and more!
+		%br/
+		%span
+			See who wants to get involved so we can book big apparel orders and cool events!
 #posts
-	= @posts.each do |post|
+	- @posts.each do |post|
 		.post
 			.post_image
 				= link_to (image_tag post.image.url(:small)), post
