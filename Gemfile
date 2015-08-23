@@ -43,7 +43,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'obfuscate_id'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.3.3'
   gem 'factory_girl_rails'
