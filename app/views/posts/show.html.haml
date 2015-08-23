@@ -5,7 +5,7 @@
 		= @post.user.name
 		about
 		= time_ago_in_words(@post.created_at)
-		expires
+		ago. Post expires
 		= @post.expiration
 	.clearfix
 		.post_image_description
