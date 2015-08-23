@@ -34,7 +34,6 @@ config/secrets.yml
 
 ## Environment normalization
 /vendor/bundle
-Gemfile.lock
 .ruby-version
 .ruby-gemset
 .rvmrc
