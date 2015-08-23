@@ -1,25 +1,27 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
+    @comments = Comment.where(post_id: @post)
+    @random_post = Post.where.not(id: @post).order("RANDOM()").first
+
   end
 
   def new
-    # load up new.html.haml with @post
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
-      # if saved redirect to posts#show
       redirect_to @post
     else
-      # render new.html.haml
       render 'new'
     end
   end
@@ -28,9 +30,16 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @post.destroy
+    redirect_to root_path
   end
 
   private
@@ -40,6 +49,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :link, :description)
+    params.require(:post).permit(:title, :link, :description, :image)
   end
 end
