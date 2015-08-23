@@ -23,7 +23,14 @@
 				.title
 					%h2= link_to post.title, post
 				.title
-					%h2= link_to post.title, post
+					%h2
+						$
+						= post.minimum_price
+						per person
+					%h2
+						Minimum
+						= pluralize(post.minimum_order, "order")
+						required
 				.data.clearfix
 					%p.username
 						Shared by

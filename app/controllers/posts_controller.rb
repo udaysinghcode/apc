@@ -37,9 +37,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def about
-  end
-
   def destroy
     @post.destroy
     redirect_to root_path
@@ -62,6 +59,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :link, :description, :image)
+    params.require(:post).permit(:title, :link, :description, :image, :expiration, :minimum_price, :minimum_order)
   end
 end

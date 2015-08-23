@@ -2,9 +2,9 @@
 	= f.input :image, required: :true
 	= f.input :title, required: :true
 	= f.input :link, required: :true
-	= f.input :price_based_on_minimum_order, required: :true
-	= f.input :minimum_number_to_order_at_said_price, required: :true
-	= f.input :order_due_date, as: :date, required: :true
+	= f.input :minimum_order, label: 'Minimum number you want to order', required: :true
+	= f.input :minimum_price, label: 'Price per unit of the minimum order rounded up', required: :true
+	= f.input :expiration, as: :date, required: :true
 	= f.input :description, required: :true
 
 	= f.button :submit

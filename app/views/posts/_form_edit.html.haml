@@ -1,0 +1,9 @@
+= simple_form_for @post do |f|
+	= f.input :image
+	= f.input :title
+	= f.input :link
+	= f.input :minimum_order, label: 'Minimum number you want to order'
+	= f.input :minimum_price, label: 'Price per unit of the minimum order rounded up'
+	= f.input :expiration, as: :date
+	= f.input :description
+	= f.button :submit
