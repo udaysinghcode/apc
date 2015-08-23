@@ -7,7 +7,7 @@
 			Is there something you're interested in today?
 			%br/
 		%span
-			Scroll to the bottom to understand how this all works.
+			Click 'About' to understand the rules and how this works!
 - else
 	%p#intro
 		List your apparel ideas, event ideas, and more!
@@ -36,33 +36,8 @@
 							%i.fa.fa-thumbs-o-up
 							= post.get_likes.size
 
+.clearfix
 - if user_signed_in?
-	.clearfix
-	%br/
-	%h2 Backing an Idea
-	%h3
-		1. See what's listed, and understand that orders are considered only if they hit their minimum number of units at the price quoted.
-		%br/
-	%h3
-		2. So if there's something you like, click the item and click that "you're buying it".
-	%h3
-		3. Once you commit to buying it once the expiration date hits, you will be charged via Venmo (so use your Venmo ID as your name).
-	%h3
-		4. You are liable to paying it as otherwise you ___ your brothers.
-	%h3 
-		5. Please pay promptly when you're charged and feel free to post snarky comments everywhere. 
-	%h2 Adding an Idea
-	%h3 1. Think about the minimum number of people you would need to place an order.
-	%h3 2. Figure out the price for that minimum number of people.
-	%h3 3. Download and upload a picture and attach a link.
-	%h3 3a. If you are planning something like paintball, attach a link to the place.
-	%h3 3b. If you are designing apparel, attach a link to the Customink order.
-	%h3 4. Set a date where at midnight EST you will not count more people in.
-	%h3 4a. All people who say they are buying in are liable to paying or they will be fined.
-	%h3 5. Add a description using your wit.
-	%h3 6. Finally once the time is hit, see who opted into buying your product and charge them all via either Venmo or cash.
-	%br/
-	%span P.S. I would have integrated Venmo but their compliance department doesn't really like me and won't give me API keys. If you want to help with the code it's on my <a href="https://github.com/udaysinghcode/apparelchair">Github</a>. This is a total work in progress and was made over two days so it's very scrappy.
-	%br/
-	%br/
-	%span Enjoy!
+	%p#intro
+		%span
+			Made on no sleep by the <a href="https://github.com/udaysinghcode">Apparel Chair</a>.
