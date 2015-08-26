@@ -15,8 +15,8 @@
 		%span
 			See who wants to get involved so we can book big apparel orders and cool events with more transparency!
 
-- @posts.each do |post|
-	#posts
+#posts
+	- @posts.each do |post|
 		- if !post.has_expired?
 			.post
 				.post_image
@@ -44,13 +44,15 @@
 							%span
 								%i.fa.fa-thumbs-o-up
 								= post.get_likes.size
-	.clearfix
-	%p#intro
-		Past Posts
-		%br/
-		%span
-			See what's happened in the past!
+.clearfix
+%p#intro
+	Past Posts
+	%br/
+	%span
+		See what's happened in the past!
+	
 	#posts
+	- @posts.each do |post|
 		- if post.has_expired?
 			.post
 				.post_image
@@ -78,8 +80,6 @@
 							%span
 								%i.fa.fa-thumbs-o-up
 								= post.get_likes.size
-
-
 
 .clearfix
 - if user_signed_in?

@@ -7,9 +7,8 @@
 			= @post.user.name
 			about
 			= time_ago_in_words(@post.created_at)
-			ago. Post expired (
+			ago. Post expired
 			= @post.expiration
-			)
 	- else
 		%p.username
 			Shared by
