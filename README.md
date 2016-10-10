@@ -5,11 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version = 2.x
+## Ruby version
 
-* System dependencies = none
+```
+2.x
+```
 
-* Configuration
+## Configuration
 
 First:
 
@@ -25,13 +27,13 @@ bundle
 
 Move on to creating the database.
 
-* Database creation
+## Database creation
 
 ```
 rake db:migrate
 ```
 
-* Run app
+## Run app
 
 ```
 rails s
